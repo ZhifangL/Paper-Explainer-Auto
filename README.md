@@ -1,4 +1,6 @@
-Have you decided to upgrade your skills by going straight to the source- learning from the original technical publications or whitepaper behind the most famous concepts out right now?  
+<b> This is a fork of [Arjun's](https://github.com/Arjun-html) Paper Explainer. Credit goes to him for the webpages </b>
+
+Have you decided to upgrade your skills by going straight to the source - learning from the original technical publications or whitepaper behind the most famous concepts out right now?  
 This repo gives you a way to interact with these papers and learn the concepts in real time through HTML artifacts. We currently have-  
   1.) Bitcoin Whitepaper  
   2.) Ethereum Whitepaper  
