@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun's Paper Explainer</title>
+    <style>
+        :root {
+            --paper: #F7F7F2;
+            --panel: #FFFFFF;
+            --ink: #1E2A33;
+            --muted: #5C6B72;
+            --line: #DFE3DA;
+            --grid: rgba(30,42,51,.045);
+            --orange: #F7931A;
+            --orange-ink: #B26400;
+            --orange-soft: #FDF1DE;
+            --teal: #0E6E6B;
+            --teal-soft: #E4F0EF;
+            --serif: Charter, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+            --mono: ui-monospace, 'Cascadia Code', Consolas, 'SF Mono', Menlo, monospace;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; background: var(--paper); color: var(--ink);
+            font-family: var(--serif); font-size: 17px; line-height: 1.65;
+        }
+
+        /* Masthead Grid Effect */
+        header.hero {
+            border-bottom: 1px solid var(--line);
+            padding: 80px 24px 56px; text-align: center;
+            background:
+                    repeating-linear-gradient(0deg, transparent, transparent 23px, var(--grid) 23px, var(--grid) 24px),
+                    repeating-linear-gradient(90deg, transparent, transparent 23px, var(--grid) 23px, var(--grid) 24px),
+                    var(--paper);
+        }
+        .hero .eyebrow {
+            font-family: var(--mono); font-size: 12px; text-transform: uppercase;
+            letter-spacing: .16em; color: var(--muted); margin-bottom: 18px;
+        }
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px); line-height: 1.15; margin: 0 auto 20px; max-width: 850px;
+            font-weight: 700; letter-spacing: -.01em;
+        }
+        .hero .readme-intro {
+            max-width: 680px; margin: 24px auto 0; font-style: italic; color: var(--muted);
+            border-top: 1px solid var(--line); padding-top: 24px; font-size: 18px;
+        }
+
+        /* Main Dynamic Layout */
+        .container {
+            max-width: 1000px; margin: 0 auto; padding: 56px 24px;
+        }
+
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px; margin-top: 12px;
+        }
+
+        /* Link Cards Styling */
+        .paper-card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .paper-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--orange);
+            box-shadow: 0 4px 12px rgba(30,42,51,0.05);
+        }
+
+        .paper-card h3 {
+            margin: 0 0 10px 0; font-size: 20px; color: var(--ink); line-height: 1.3;
+        }
+        .paper-card h3 .topic-tag {
+            display: block; font-family: var(--mono); font-size: 11px; color: var(--teal);
+            letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px;
+        }
+        .paper-card p {
+            margin: 0 0 20px 0; font-size: 15px; color: var(--muted); flex-grow: 1;
+        }
+
+        .paper-card .action-link {
+            font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--orange-ink);
+            display: flex; align-items: center; gap: 6px;
+        }
+
+        footer {
+            text-align: center; color: var(--muted); font-family: var(--mono); font-size: 12px;
+            padding: 56px 24px; border-top: 1px solid var(--line); margin-top: 56px;
+        }
+
+        @media (max-width: 768px) {
+            .paper-grid { grid-template-columns: 1fr; }
+            header.hero { padding: 56px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="eyebrow">Primary Source Archive</div>
+    <h1>Going Straight to the Source</h1>
+    <p class="readme-intro">
+        Have you decided to upgrade your skills by learning directly from the original technical publications or whitepapers behind the most famous concepts out right now? This interface gives you a way to interact with these seminal papers and learn the concepts in real time through HTML artifacts.
+    </p>
+</header>
+
+<main class="container">
+    <div class="paper-grid">
+
+        <!-- Bitcoin Card -->
+        <a href="bitcoin-whitepaper-interactive.html" class="paper-card">
+            <h3>
+                <span class="topic-tag">Cryptographic Cash</span>
+                Bitcoin: A Peer-to-Peer Electronic Cash System
+            </h3>
+            <p>Satoshi Nakamoto's 2008 roadmap for exchanging value without intermediate institutional trust. Features computational hash-chains and consensus race simulators.</p>
+            <span class="action-link">Open Reading →</span>
+        </a>
+
+        <!-- Ethereum Card -->
+        <a href="ethereum-whitepaper-interactive.html" class="paper-card">
+            <h3>
+                <span class="topic-tag">Decentralized Compute</span>
+                Ethereum: Next-Generation Smart Contract Platform
+            </h3>
+            <p>Vitalik Buterin's 2013 conceptual shift from a trustless transaction ledger into a turing-complete, decentralized global computation engine.</p>
+            <span class="action-link">Open Reading →</span>
+        </a>
+
+        <!-- Nyquist Card -->
+        <a href="nyquist-telegraph-interactive.html" class="paper-card">
+            <h3>
+                <span class="topic-tag">Information Theory Foundations</span>
+                Certain Factors Affecting Telegraph Speed
+            </h3>
+            <p>Harry Nyquist's monumental 1924 study on speed metrics within communication channels, setting the stage for digital sampling boundaries.</p>
+            <span class="action-link">Open Reading →</span>
+        </a>
+
+        <!-- Shannon Card -->
+        <a href="shannon-noise-whitepaper-interactive.html" class="paper-card">
+            <h3>
+                <span class="topic-tag">Signal &amp; Code Theory</span>
+                A Mathematical Theory of Communication
+            </h3>
+            <p>Claude Shannon's revolutionary 1948 masterwork introducing data entropy, processing limits, and structural transmission amidst system noise.</p>
+            <span class="action-link">Open Reading →</span>
+        </a>
+
+    </div>
+</main>
+
+<footer>
+    Interactive Documentation Hub · All simulations run locally inside your web browser environment.
+</footer>
+
+</body>
+</html>
